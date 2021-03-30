@@ -24,6 +24,8 @@ var timerElementEl = document.querySelector(".timerElement");
 var quizQuestionsEl = document.querySelector(".quizQuestions");
 var quizAnswersEl = document.querySelector(".quizAnswers");
 var gameOverScreenEl = document.querySelector(".gameOverScreen");
+
+
 var questionIndex = 0;
 
 
@@ -156,14 +158,56 @@ function nextQuestion() {
     var questionText = document.querySelector(".quizQuestions");
     questionText.textContent = quizQuestions[questionIndex].question; 
 
-    document.querySelector("#answer1").textContent = quizQuestions [questionIndex].choice1;
-    document.querySelector("#answer2").textContent = quizQuestions [questionIndex].choice2;
+    document.querySelector("#answer1").textContent = quizQuestions[questionIndex].choice1;
+    document.querySelector("#answer2").textContent = quizQuestions[questionIndex].choice2;
+    
+}
 
+function checkAnswer() {
+    if ("#answer1" === quizQuestions[questionIndex].correctAnswer) {
+        //this is where I'll say "nice" for getting the answer right
+
+
+    } else {
+        //display thing that says "bad"
+
+        timerCount -10;
+    }
+
+    if (questionIndex >= quizQuestions.length - 1) {
+        gameOver();
+
+    }  else {
+    //if answer___ is equal to the correct answer, then increment the question index otherwise 
+    // i click on a particular button, the value associated with that particular button is equal to quizQuestions[questionIndex].correctAnswer
+    questionIndex ++;
+    
+    nextQuestion();
+    }
+    console.log(quizQuestions.length);
+    console.log(questionIndex);
+}
+
+document.querySelector("#answer1").addEventListener("click", checkAnswer);
+    // i need a function to check that the answer is true or false and then return the value and move to the next question
+    // and then if the value is false, subtract time from the timeCount, and if true just move to the next question
+    //
+
+    // the query selector should be pointing to a dom element as such
+    //choice1.addEventListener("click",) ;//the function that checks if the choice was true or false )
+
+
+
+
+    //if (asdfasdf === true) {
+        //if true then nextQuestion()
+        //if false -10 seconds from timer
+    //}
 
     // var choice1Value = quizQuestions [questionIndex].choice1
     // var choice2Value = quiz
 
-    addEventListener()
+    //addEventListener("click" );
 
 
     //if correctAnswer = false {
@@ -172,13 +216,21 @@ function nextQuestion() {
 
 
 
-    questionIndex ++;
-}
+    
+
+
+// function() {
+
+
+
+// }
 
 function gameOver(){
     console.log("you lose");
+    document.querySelector("#answer1").textContent = "";
+    document.querySelector("#answer2").textContent = "";
+    document
 // should change text content of h1 tag to GAME OVER
-
 // has localStorage displayed for when the player enters their initials per win
 // includes start button again
 }
