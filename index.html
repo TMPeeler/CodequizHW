@@ -8,11 +8,25 @@
 </head>
 
 <body>
-    <script src="script.js"></script>
+   
     <header>
-        <div> Code Quiz!</div>
-        <button id="startButton">Start Game</button>
+        <div> Code Quiz!</div> 
+
+        <button class="startButton">Start Game</button>
+
+
+        <p class="timerElement">10</p> <!-- timer -->
     </header>
-    
+    <main>
+        <h1 class="quizQuestions"></h1> <!-- this is where I'm going to put the questions-->
+        <ul class="quizAnswers">
+            <li></li> <!-- this is where each of the options will go-->
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <h1 class="gameOverScreen"></h1> <!-- GAME OVER -->
+    </main>
+    <script src="script.js"></script> <!-- note to self always keep script tag last in the body or else you can break random things for some reason-->
 </body>
 </html>
