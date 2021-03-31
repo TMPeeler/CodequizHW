@@ -1,0 +1,38 @@
+main {
+    text-align: center;
+}
+
+.timerElement {
+    text-align: center;
+    font-size: 40px;
+}
+
+
+.titleCard {
+    font-size: 50px;
+    text-align: center;
+    background-color: rgb(61, 61, 187);
+    border-radius: 20px;
+}
+body {
+    background-color: rgb(149, 180, 238);
+
+}
+
+/* header.button {
+    text-align: center;
+    margin: auto;
+    margin-left: 100px;
+    display: flex;
+    justify-content: center; 
+} */
+
+#answer1 {
+    font-size: 25px;
+
+}
+
+#answer2 {
+font-size: 25px;
+    
+}
