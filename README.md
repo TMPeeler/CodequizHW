@@ -13,7 +13,7 @@ In order to accomplish the goal of this assignment, I had to use VSCode for the 
 
 ### Solving
 
-I honestly wouldn't even consider this assignment truly solved because there are several features that I intended to create that I either: didn't have enough time to experiment with after so much time was spent on debugging or asking for help with trying to go from pseudocode to actual code, or that I straight up didn't know how to use my current tool/skillset to implement them. Regardless I did the best that I could and the things I thought about are as follows. I thought about my variable declaration and how I could have certain elements of my HTML controlled by my javascript functions, creating an array of questions and deciding to simplify the prompt by creating true or false questions and answers, having a working timer and a method of decrementing the timer based on which question answer was chosen, 
+I honestly wouldn't even consider this assignment truly solved because there are several features that I intended to create that I either: didn't have enough time to experiment with after so much time was spent on debugging or asking for help with trying to go from pseudocode to actual code, or that I straight up didn't know how to use my current tool/skillset to implement them. Regardless I did the best that I could and the things I thought about are as follows. I thought about my variable declaration and how I could have certain elements of my HTML controlled by my javascript functions, creating an array of questions and deciding to simplify the prompt by creating true or false questions and answers, having a working timer and a method of decrementing the timer based on which question answer was chosen, having a way to select my elements on the page via click, tracking the value of the answer that was clicked on via event.target.id, a function that determines if the game is over either by the timer reaching zero or the last question being asked. Something that I didn't get to fully realize was the high scores but I wanted to have a text box element created on the game over screen that stored the remaining time as the score and the initials as the user in the local storage that could be called on whenever the game over screen would be reached but I just didn't have enough time to try to make it work. 
 
 
 
@@ -21,10 +21,11 @@ I honestly wouldn't even consider this assignment truly solved because there are
 
 * [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 * [JS](https://www.javascript.com/)
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
 ## Deployed Link
 
-* [https://tmpeeler.github.io/passwordgenHW/](#)
+* [https://tmpeeler.github.io/CodequizHW/](#)
 
 ## Code snippet of important work:
 Probably my favorite and what I believe to be my most creative "solution" to the criteria of the prompt:
@@ -56,8 +57,8 @@ using both of these ideas in tandem to actual accomplish part of the assignment 
 
 * **Thomas Peeler** 
 
-- [https://github.com/TMPeeler/passwordgenHW]
+- [https://github.com/TMPeeler/CodequizHW]
 
 ## Acknowledgments
 
-* Special thanks to Marko and Mark for helping me debug and come up with ways to use my tools to solve the big problems and restrictions of this as well as Javier, Jake, and Liam for telling me about their understanding and strategies of attack that helped me understand what was necessary to solve the problem.
+* Super big thanks to Dylan for helping me along the logistical path I needed to understanding what I was doing with my work and why. Incredibly helpful for this assignment and I honestly don't think I would have felt I learned so much without his assistance. Also special thanks to Mahi for helping me find the syntax for the tools that I wanted to use so that my code would have a basis for me to work on, that really helped me understand how to setup my problems better so that I would have an easier time coming up with the language and deciding which tools I wanted to use to solve my problem.
