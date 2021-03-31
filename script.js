@@ -19,7 +19,7 @@
 // every time someone finishes the game, they may add their initials and it will save to the game over screen with their score.
 // display start button
 
-var startButtonEl = document.querySelector(".startButton");1
+var startButtonEl = document.querySelector(".startButton");
 var timerElementEl = document.querySelector(".timerElement");
 var quizQuestionsEl = document.querySelector(".quizQuestions");
 var quizAnswersEl = document.querySelector(".quizAnswers");
@@ -77,42 +77,42 @@ var quizQuestions = [
         question: "Which color is my favorite?",
         choice1: "blue",
         choice2:  "red",
-        correctAnswer: "blue"
+        correctAnswer: "answer1" 
     },
 
     {
         question: "Common data types do NOT include...",
         choice1: "booleans",
         choice2: "alerts",
-        correctAnswer: "alerts"
+        correctAnswer: "answer2"
     },
 
     {
         question: "Arrays in JavaScript can be used to store...",
         choice1: "numbers and strings, other arrays and booleans",
         choice2: "Light particles",
-        correctAnswer: "numbers and strings, other arrays and booleans"
+        correctAnswer: "answer1"
     },
 
     {
         question: "The condition in an if/else statement is enclosed within...",
         choice1: "parentheses",
         choice2: "curly brackets",
-        correctAnswer: "parentheses",
+        correctAnswer: "answer1",
     },
 
     {
         question: "String values must be enclosed within ... when being assigned to variables.",
         choice1: "parentheses", 
         choice2: "quotes",
-        correctAnswer: "quotes"
+        correctAnswer: "answer2"
     },
 
     {
         question: "A very useful tool used during development and debugging for printing content to the debugger is:",
         choice1: "console.log",
         choice2: "terminal/gitbash",
-        correctAnswer: "console.log"
+        correctAnswer: "answer1"
     }
 ]
 
@@ -127,7 +127,7 @@ function startTimer(){
     timer = setInterval(function() {
         timerCount --;
         timerElementEl.textContent = timerCount;
-        if (timerCount === 0) {
+        if (timerCount <= 0) {
             clearInterval(timer);
             gameOver();
     }
@@ -163,15 +163,22 @@ function nextQuestion() {
     
 }
 
-function checkAnswer() {
-    if ("#answer1" === quizQuestions[questionIndex].correctAnswer) {
+function checkAnswer(event) {
+    if (event.target.id === quizQuestions[questionIndex].correctAnswer) {
         //this is where I'll say "nice" for getting the answer right
 
 
+        // console.log ("anything I want");
+        // return event.target.id;
+
+        //^^^ this broke the code because when I wanted to console log, I needed to return the value that the console was supposed to log.
+
+        //this returns what answer I clicked
     } else {
         //display thing that says "bad"
 
-        timerCount -10;
+        timerCount -=10;
+        // this updates the timer from the initial or current value by subtracting by 10. If i put a normal minus sign, it won't work because it's not telling the timer to do anything.
     }
 
     if (questionIndex >= quizQuestions.length - 1) {
@@ -184,11 +191,18 @@ function checkAnswer() {
     
     nextQuestion();
     }
-    console.log(quizQuestions.length);
-    console.log(questionIndex);
+
+    // if()
+
+    console.log(event.target.id);
+    // console.log(quizQuestions.length);
+    // console.log(questionIndex);
+    console.log(quizQuestions[questionIndex].correctAnswer);
+    
 }
 
-document.querySelector("#answer1").addEventListener("click", checkAnswer);
+document.querySelector(".quizAnswers").addEventListener("click", checkAnswer);
+// document.querySelector("#answer2").addEventListener("click", checkAnswer);
     // i need a function to check that the answer is true or false and then return the value and move to the next question
     // and then if the value is false, subtract time from the timeCount, and if true just move to the next question
     //
@@ -226,10 +240,15 @@ document.querySelector("#answer1").addEventListener("click", checkAnswer);
 // }
 
 function gameOver(){
+    var score = timerCount;
+
+    clearInterval(timer)
+    // var 
+    // document.createElement("")
     console.log("you lose");
     document.querySelector("#answer1").textContent = "";
     document.querySelector("#answer2").textContent = "";
-    document
+    document.querySelector(".quizQuestions").textContent = "YOU LOSE";
 // should change text content of h1 tag to GAME OVER
 // has localStorage displayed for when the player enters their initials per win
 // includes start button again
